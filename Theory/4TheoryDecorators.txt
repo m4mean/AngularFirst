@@ -1,0 +1,5 @@
+1 Decorators are a feature of typescript and are implemented as functions. the name of the decorator starts with @ symbol following by brackets and arguments, since decorators are just functions in typeScript.
+2 Decorators are simply functions that return functions. these functions supply metadata to angular about a particular class, property, value, or method...
+3 Decorators are invoked at runtime.
+4 Decorators allow you to execute functions for example @Component executes the Component function imported from angular5
+5 ngModule ek tarah ka decorator hai yah ek array type ka hai

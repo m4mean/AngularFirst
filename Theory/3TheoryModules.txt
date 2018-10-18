@@ -1,0 +1,8 @@
+1 @ngModulers ke andar declarations [component, pipe, directive] yah compiler time execute hota hai and imports [Modules] and providers [service1, service2] yah injector se belong karti hai time
+2 two way component add karna first way command (ng generate component student/ ng g c student)
+3 jab hum command se component create karte hai yah module ke andar bhi automatic add ho jata hai
+4 create karte hai four type ki file create hoti hai
+5 hum our application ke andar ek se jyada bhi module create kar skte hai
+6 ek file sare component create its not good trick we have to create your module and all component in that module or use module ka reference hum app.module.ts ke andar denge import vale me vah module import hote hai
+7 module create karne ka way (ng generate module studentPortal)
+8 our module ke andar create component (ng g c studentPortal/studentlogin) jo command me first me likha hai module hai our jo / slash ke bad likha use hum component create karte hai

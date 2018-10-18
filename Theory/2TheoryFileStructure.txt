@@ -1,7 +1,25 @@
-1 karma.conf.js this file use for testing
+1 karma.conf.js this file use for testing and es file ek andar framework hai jis ka name jasmine hai ise us karte hai testing ke liye
 2 angular-cli.json yah file our application ko configuration karti hai yah config karta hai our application name ko and root ko and root call karta and konsa folder pahle execute hoga second "outDir" : "dist" mean jab project built karte to to is foldar me jayega and index mean koina file sabse pahle call / load hoga or (main) main file our application entry point hota hai
 3 package.json file yah vah file jo bhi module our application add kate hai unka configuration yah par add ho jata hai.. get all version .. first dependencies : {} use kiya jata ha production ke liye  dependencies {} ka use kiya jata hai for development ke liye important thing ng serve and everything define in this file command ng start/build/test/
 4 src folder ke andar index.html file call hota hi or jo is ke andar content aa rhe hai main.ts se aa rhe hai
 5 main.ts file yah our file ko configuration karti hai and yah batata hai kis environment chal rhi hai production / developer mode you check console.log file esi file mai aap change kar skte hai development ko production mode and yah entry point hai our application mean yah our application root ko define karta hai kis module ko pahle call karega or jo bhi content hoga us module me sabse pahle vo dikhega and bootstrapModule yah module mean jo our application kah se boot karega vah hai appModule
-6 app->app.modules.ts yah file entry point hai yah booting module hai yah ek method @ngModule{} yaha declaration mai jo component hoga usi ko call karega see this file next point
-6 app.components.ts is file mai component banate hai @Component yah es file html file path and selector likhte hai yah html index ko call karti hai also css file bhi yah import karte hai
+6 app->app.modules.ts yah file entry point hai yah booting module hai yah ek method @ngModule{} yaha declaration mai jo component hoga usi ko call karega see this file next point @ngModule ek object accept karta hai jisme four type ke array hote hai agr hum koi bhi (component) create karte hai to use hum declarations ke andar add karna hota hai and job bhi hum kisi (module) add karte hai use imports karte hai next hai jo bhi hum service use karte hai use providers  ke andar add karte hai next hota booting point boot kah se start hota or isme multiple boot likh sakhte hai
+7 app.components.ts is file mai component banate hai @Component yah es file html file ka reference de rhe hai and selector likhte hai yah html index ko call karti hai also css file bhi yah import karte hai es file mai bind bhi kar skte hai example title = "hello man" use it html {{title}} like this yah binding hoti hai yah tab bind hota hai jab hum component ko export karte hai vah define hota hai
+8 main root style.css and component ke andar css file both totally different hai style css sabhi par apply hoti hai by default or jo component hai css hai usi component par apply hoti hai agr main style css mai koi class lag rhi hai to component css usko override kar deti hai
+9 editor.config file hoti team ke liye yah hum our project rule dalte hai kya karna hai yah sabhi ke liye hoti hai
+10 tsconfig.json yah ts file ko javascript me convert karta hai mean compile karta hai
+11 tslint.json file error rules define kiye hote hai yah hame error show karavta hai
+12 assets folder ke andar hum vo sari static cheeje hum rakhte hai jinko hum apne project me use kar skte hai like images/icons/themes
+13 environment esme to file hoti hai environment development and environment production ki use hoti hai
+14 polyfills.ts file es liye use hoti bahut sare browser es6 support nhi karte hai unko support use karne ke liye mean kuch feature support nhi karta
+15 test.ts file use hoti testing ke liye
+16 tconfig.app.json is file ke andar application ke compiler ki configuration define ki hoti hai
+
+17 package.js and package.lock.js
+  package.js application name and version scripts ke andar npm command hai... es me two type ke package hote hai one dependencies yah package our application run ke liye use hota hai jab hum our application build karte hai yahi packages call hote hai yah only our application run karne ke liye hoti hai yah prod par jati hai yah hamare development ke liye jaruri nhi hoti second hai devdependencies yah hamare development ke liye jaruri hoti hai devdependencies ke andar jo package available hai yah hamare development ke necessary hoti hai
+  jo bhi aap package install karte hai yah update ho jata hai package.lock.js ke andar.. jo bhi version aapko package.lock.js ke andar dikhega vah our application ke andar install hai.. jo bhi package install hota hai vah node_module folder ke andar hota hai
+
+18 ^ Caret(karait) symbol 1.6.5 version hai first me caret symbol laga hua hai first character ko chhod kar second vale ko check karega us se upper version hai to vah update kar dega use bad last (tilde) me jayega agr use kuch update milta hia update kar dega mean (minor and revision ko check karega) agr na caret hai na tilde hai use bolte hai adjunct
+   ~ tilde(til) symbol  1 -> major.6 -> minor(^).5 -> (revision ~)
+   1.2.4 version mean first mean major/breaking change second hai minor/new features third hota hai revision/ bugs fix
+
