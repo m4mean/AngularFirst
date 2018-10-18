@@ -1,0 +1,5 @@
+1 karma.conf.js this file use for testing
+2 angular-cli.json yah file our application ko configuration karti hai yah config karta hai our application name ko and root ko and root call karta and konsa folder pahle execute hoga second "outDir" : "dist" mean jab project built karte to to is foldar me jayega and index mean koina file sabse pahle call / load hoga or (main) main file our application entry point hota hai
+3 package.json file yah vah file jo bhi module our application add kate hai unka configuration yah par add ho jata hai.. get all version .. first dependencies : {} use kiya jata ha production ke liye  dependencies {} ka use kiya jata hai for development ke liye important thing ng serve and everything define in this file command ng start/build/test/
+4 src folder ke andar index.html file call hota hi or jo is ke andar content aa rhe hai main.ts se aa rhe hai
+5 main.ts file yah our file ko configuration karti hai and yah batata hai kis environment chal rhi hai production / developer mode you check console.log file esi file mai aap change kar skte hai development ko production mode

@@ -1,0 +1,30 @@
+1 What is Angular?
+  * Angular is a platform and framework for building client
+    applications in html and typescript. Angular is itself written
+     in Typescript
+  * Angular 5 was announced to the world on November 1, 2017.
+  * Developed by : Google.
+  * Front end / Client side javascript framework
+
+2 Features
+  * Speed and performance -> kyuki yah component hota hai jab component hota hai tab apne resource ko load karta hai is ke chalte application automatic fast ho jata hai
+  * Smaller application   -> jab ham built karte hai to bahut small banta hai
+  * Modular application   -> agr hamne kisi application mo koi module create kar rakha hai us module ko copy paste kar hai reuse hoti hai
+  * cross-platform (web, mobile, and desktop)
+  * Single page application (spa)
+  * Restful Api
+  * Use Type Script
+
+3 Setup Development Environment
+  * Node.js : node.js is an open source, cross-platform javascript run time environment
+  * npm : npm is a node.js package manager for javascript programing language. it is automatically installed with node.js
+  * Typescript : need to install it using command - npm install -g typescript
+  * Angular cli (Command line interface) : is a tool to that allow us to create a project, built and run it on development server directly using command line.
+  * command : npm install -g @angular/cli
+
+4 Check Every Package
+  * node -v for node
+  * npm -v for npm
+  * ng -v for angular
+  * npm install -g @angular/cli this will stall globally after that create project (ng new my-app) go to inside this folder ng serve --open
+
