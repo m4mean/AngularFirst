@@ -14,7 +14,8 @@ import { AppComponent } from './app.component';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(){
+  constructor() {
+    // class decorators
    console.log('first yah call hoga');
   }
 }
