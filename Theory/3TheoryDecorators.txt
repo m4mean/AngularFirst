@@ -18,3 +18,5 @@
   * method decorators for methods inside classes e.g @HostListener
   * parameter decorators for parameters inside class constructors e.g @Inject
   * Each decorators has a unique role
+
+4 how to create service with command (ng generate service myservice)

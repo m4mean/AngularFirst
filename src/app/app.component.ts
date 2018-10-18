@@ -1,4 +1,5 @@
-import {Component, HostListener} from '@angular/core';
+import {Component, HostListener, Inject} from '@angular/core';
+import {MyserviceService} from './myservice.service';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +10,12 @@ import {Component, HostListener} from '@angular/core';
 })
 export class AppComponent {
   title = 'my-app';
-  constructor() {
+  // first we have to generate service ng generate service myservice after that add here
+  //parameter decorators for parameters inside class constructors e.g @Inject
+  // is ke bad module ke andar service add karni hai
+  constructor(@Inject(MyserviceService) myserviceService) {
     // class decorators
+    console.log(myserviceService);
     console.log('yah second hai component call cosntuct');
   }
 
