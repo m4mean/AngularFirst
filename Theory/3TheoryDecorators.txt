@@ -1,0 +1,20 @@
+1 decorators
+  * Decorators are a feature of typescript and are implemented as functions. the name of the decorator starts with @ symbol following by brackets and arguments, since decorators are just functions in typeScript.
+  * Decorators are simply functions that return functions. these functions supply metadata to angular about a particular class, property, value, or method...
+  * Decorators are invoked at runtime.
+  * Decorators allow you to execute functions for example @Component executes the Component function imported from angular5
+  * ngModule ek tarah ka decorator hai yah ek array type ka hai
+
+2 some common decorators
+  * @NgModule() to define modules...
+  * @component() to define components...
+  * @Injectable() to define services..
+  * @input() and @output() define properties.. that send and receive data from the dom
+  * there are many built-in decorates available in angular.. and many properties on each decorator
+
+3 types of decorators
+  * class decorators e.g @component and @NgModule
+  * property decorators for properties inside classes e.g @input and @output
+  * method decorators for methods inside classes e.g @HostListener
+  * parameter decorators for parameters inside class constructors e.g @Inject
+  * Each decorators has a unique role

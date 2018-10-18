@@ -8,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  constructor(){
+    console.log('yah second hai component call cosntuct');
+  }
   title = 'my-app';
 }
