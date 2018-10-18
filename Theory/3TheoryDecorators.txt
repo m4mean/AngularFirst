@@ -20,3 +20,6 @@
   * Each decorators has a unique role
 
 4 how to create service with command (ng generate service myservice)
+
+5 @input and @output kab use karte hai or kaise use karte hai input and output decorators hai two component ke bich me communication ke use kar hai vo bhi tab dono component ke andar parent and child ka relation ho jab hame parent se koi data child mai bhejana ho ya fir child component se koi data parent component me bhejna ho tab hum use karte hai input/output ka decorators
+  agr hum parent se data child koi bejte hai @input use karte hai agar hum child se parent pe data bhjete hai to hum @output use karte hai

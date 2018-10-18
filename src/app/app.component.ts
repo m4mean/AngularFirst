@@ -9,9 +9,10 @@ import {MyserviceService} from './myservice.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  inputvariable = 'Hi i am your parent';
   title = 'my-app';
   // first we have to generate service ng generate service myservice after that add here
-  //parameter decorators for parameters inside class constructors e.g @Inject
+  // parameter decorators for parameters inside class constructors e.g @Inject
   // is ke bad module ke andar service add karni hai
   constructor(@Inject(MyserviceService) myserviceService) {
     // class decorators
@@ -23,5 +24,9 @@ export class AppComponent {
   @HostListener('click', ['$event'])
   onhostclick(event: Event) {
      alert('hello');
+  }
+
+  getdata(value) {
+    console.log(value);
   }
 }
