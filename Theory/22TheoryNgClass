@@ -1,0 +1,7 @@
+ngClass
+ 1  ngClass directive allows us to set the css class dynamically for a DOM element.
+ 2 ngClass with string
+ 3 ngClass with array
+ 4 ngClass with object
+ 5 ngClass with component method
+
