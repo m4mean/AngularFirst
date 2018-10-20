@@ -1,0 +1,5 @@
+ngSwitch
+1 ngSwitch is actually comprised of two directives, an attribute directive and a structural directive. it's very similar to a switch statement in javascript and other programming languages. but in the template.
+2 the ng-switch directive lets you hide/show html elements depending on an expression.
+3 we can also define a default section, by using the ng-switch-default directive, to show a section if none of the other sections get a match.
+4 three things to keep in mind-ngSwitch, ngSwitchCase, ngSwitchDefault
