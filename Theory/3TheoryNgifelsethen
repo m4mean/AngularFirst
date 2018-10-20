@@ -1,0 +1,71 @@
+ ngif else then
+1 ngif conditionally includes a template based on the value of expression.
+2 it adds or removes the html element in dom layout
+3 the basic syntax of the ngif directive is simple and effective, all we need to do is prefix the directive name with an asterisk(*) and add it anywhere inside our template
+
+@ngif
+  * ngif is an structural directive that can add or remove host element and its descendants in dom layout at run time. it conditionally shows the inline template.
+  * ngif works on the basis of true and false result of given expression. if condition is true, elements will be added into dom laoyt otherwise they will be removed.
+  <div *nfif="condition">.. </div>
+
+@ngif with else
+  * else is used when we want to display something for false condition
+  * the else block is used as follows
+    <div *ngif="condition; else elseBlock">...</div>
+    <ng-template #elseBlock> ..</ng-template>
+  * for else block we need to use <ng-template> element. it is referred by a template reference variable. ngif will use that template reference variable to display else block when condition is false.
+
+*ngif with then and else
+  Ngifwith then and else is used as follows.
+  <div *ngif="condition; then thenblock else elseblock"></div>
+  <ng-template #thenblock>...</ng-template><ng-template #elseblock>...</ng-template>
+  * when condition is true, then the <ng-template> with reference variable the block is executed and when condition is false then the <ng-template> with reference variable elseblock is executed. the value of thenblock ad else bockean be changed at run time.
+  * we can have more then one <ng-template> for then and else block and at runtime we can switch to those <ng-template> by changing the value of thenblock and elseblock at one time only one <ng-template> for thenblock or elseblock will run.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
