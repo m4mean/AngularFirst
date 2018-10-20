@@ -1,0 +1,34 @@
+1 directives are elements which change the appearances or behavior of the DOM element. There are 3 types of the directives mainly.
+2 directives ->
+  first -> components -> directives with own template
+  second -> structural -> change DOM by adding removing elements.
+  third -> attribute  -> change appearance or behavior of the DOM.
+
+3 component directives
+  * Component is also a type of directive with template, styles and logic part which is most famous type of directive.
+  * you can't create an angular application without one. a component directive requires a view along with its attached behaviours. this type of directive adds DOM elements.
+  * The naming convention for components is : name.components.ts
+
+4 structural directives
+  * structural directives are responsible for the HTML layout. They shape or reshape the HTML view by simply adding or removing the elements in the DOM. These directives are the way to handle how to component or the element renders in a template.
+  * There are basically 3 structural directives available in Angular.
+    * ngIf (*ngIf)
+    * NgFor (*ngFor)
+    * NgSwitch ($ngSwitch)
+
+5 attribute directives
+  * attribute directives is a way to modify the appearance of the dom elements of component. there are 2 built-in attribute directives in angular.
+    * ngStyle : angular provides a built-in NgStyle attribute to modify the element appearance and behavior.
+    * ngClass : this attribute is used to change the class attributes of the element in Dom or the component to which it has been attached
+
+
+
+
+
+
+
+
+
+
+
+
