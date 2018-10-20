@@ -1,0 +1,3 @@
+HostListner
+1 @HostListener() function decorator allow us to handle event of the host element in the directive class.
+2 @HostListener lets us to listen for event on host element or component

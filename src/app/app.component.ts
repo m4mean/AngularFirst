@@ -1,12 +1,22 @@
-import { Component } from '@angular/core';
+import {Component, HostListener} from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  // templateUrl: './app.component.html',
-  // template mai hum direct text echo karva skte hai but templateurl mai file print karava skte hai
-  template : '<h1>Hello man</h1>',
+  templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'my-app';
+
+  @HostListener('click') onClick () {
+    alert('working');
+  }
+
+  @HostListener('mouseover') mouseover() {
+    this.changeText();
+  }
+
+   changeText() {
+    alert('working');
+   }
 }
