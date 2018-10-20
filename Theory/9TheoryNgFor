@@ -1,0 +1,19 @@
+ngFor
+1 ngfor is a structural directive, means, it changes the structure of the dom.
+2 it's point is to repeat a given html template once for each value in an array, each time passing it the array value as contex for string interpolation or binding.
+3 the syntax is *ngFor="let <value> of <collection>"
+4 <value> is a variable name of your choosing, <collection> is a property on your component which holds a collection, usually an array but anything that can be iterated over in a for loop.
+
+5 forfor local variables
+  * index - used for provide the index for current element while iteration.
+  * First - return true if current element is first element in the iteration otherwise false.
+  * last - return true if current element  is last element in the iteration otherwise false.
+  * even - return true if current element is even element based on index in the iteration otherwise false.
+  * odd - return true if current element is odd element based on index in the iteration otherwise false.
+
+6 index with *ngFor directive
+  * Sometimes wwe also want to get the index of the item in the array we are iterating over. we can do this by adding another variable to your ngFor expression and making it equal to index.
+  * The index is always zero based, so starts at 0 then 1,2,3,4 etc...
+
+7 Even & odd with *ngFor directive
+  * Even & odd both privides the Boolean value. returns true if current element value is even element based on index or odd element based on index, otherwise false.
