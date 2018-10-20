@@ -1,0 +1,5 @@
+ngStyle
+1 the ngstyle directive lets you set a given dom elements style properties.
+2 <div [ngStyle]='{background-color':green}'></div>
+3 ngStyle becomes much more useful when the value is dynamic.
+4 <div [ngStyle]='{background-color' : person.country==='uk' ? 'green' :'red'}' ></div>
