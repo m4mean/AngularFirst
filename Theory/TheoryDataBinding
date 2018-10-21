@@ -1,0 +1,52 @@
+Data binding
+* data binding means to bind the view (Html content) with controller's (Component's) field. that is whenever we display dynamic data on a view (HTML) from component, data binding is used.
+* Data binding basically  means interacting with data. so, we can say that the interaction between templates and business logic is called data binding.
+* databinding = communication
+   * component -> boyd/ logic -> (pass data)
+   * template (view) -> (listen to events)
+
+* Data binding
+  * one-way binding
+    * component to view
+      * interpolation binding
+      * property binding
+      * style binding
+      * class binding
+      * attribute binding
+    * view to component
+      * event binding
+  * two-way binding
+
+* interpolation
+  * interpolation is a technique that allows the user to bind a value to a UI element.
+  *interpolation binds the data one-way. this meann that when value of the field bound using interpolation changes, it is updated in the page as well. it can't change the value of the field.
+  * The format for defining interpolation in a template is {{propertyName}}
+  * component ------{{value}} ------> dom
+
+* property binding
+  * it is used to bind values of component/model properties to the html element.
+  * depending on the values, it will change the existing behavior of the html element.
+  * syntax -[property] ='expression'
+  * in property binding, there is source and target. for this example, we can define it as [innterHTML] = 'firstname'. here innterHTML is a target that is a property of span tag and source is a component property i.e firstname.
+
+* Attribute binding
+  * with attribute binding, we can set the value of an attribute directly. The thing to note is that you must use the attribute binding only when there is no element property there to bind.
+  * Attribute binding is used to bind attribute of an element with the field of a component.
+  * <td [attr.colspan] ="myColSpan" align="center"> Employee's records </td>
+
+* event binding
+  * Event binding flows or binds the data from as html element to a component.
+  * syntax
+  * within parentheses on the left of the equal sign, we hae to target event ("click" in this case) and on the right side, we have the template statements such as component properties and methods.
+  * <button (click)="onClick()> clicke me</button>
+  * in this case, the onClick() method of the component class is called when the click event occurs.
+
+* Two-way Data binding
+  * The most popular and widely used data binding mechanism is two-way binding in the angular framework. besically two-way binding mainly used in the input type field or any form element where user type or provide any value or change any control value in the one side, and on the other side, the same automatically updated in to the controller variables and vice versa.
+  * event binding + property binding => [ngModel] == two-way data binding
+
+  * in simple words, two-way data binding is a combination of both property binding and event binding.
+    < input[value]='datal' (input) ='data=$event.target.value'>
+  * using [(ngModel)] directive
+  * ngModel directive which combines the square brackets of property binding with the parentheses of event binding in a single notation.
+  * <input [(ngModel)] = 'data'>
