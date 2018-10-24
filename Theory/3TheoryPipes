@@ -1,0 +1,75 @@
+Pipes
+  * angular pipes can be used to transform data to desired output.
+  * Pipes takes in a data input and transforms data to a different output.
+  * using the pipe operator (|), we can apply the Pipe's features to any of the property in our angular project.
+  * Pipes (|) in angular are used to transform the data before displaying it in a browser. Angular provides a lot of built-in pipes to translate the data before displaying it into the browser and as we know, Angular lets us extend its feature, we can even create custom pipes in angular.
+
+  examples
+    * For Examples, pipe can take "pass@123" as input and transform to "*******" in capital or you can give input as "100" which you want to display (transform) as "100.00$" on UI.
+    {{'Test' | uppercase}} => RESULT = TEST
+
+    * pipes
+      * built-in pipes
+        * parameterized
+        * chaining
+      * custom pipes
+
+pipes -Built-in Pipes
+  * The syntax for using pipe in angular is straightforward. just use data or expression and pipe name separated with a pipe "|" symbol
+  * data | pipeName
+  * Angular 5 provides many built-in Pies which include upercase, lowercase, decimal, date, percent, currency etc
+  * Syntax- property value | uppercase
+
+Parameterized Pipes
+  * we can pass any number of parameters to the pipe using a colon (:)
+  * date | pipeName: parameter : :parameter 2: parameter : 3....: parameter n
+  * Syntax :
+  * date Short:- {{DOB | date: "short"}}
+  * currency {{salary | currency: 'USD' : TRUE::'|3-3}}
+
+multiple pipes (chaining pipes)
+  * we can use multiple pipes with the sanme data at the same. This also referred to as chaining pipes
+  * data|pipe1|pipe2|pipe3|...pipe n
+  * data|pipe1:paramter1:parameter2:parameter3 n| pipe2 :parameter1:parameter2 ..n
+
+pipes alls
+  * Uppercase -> Converts the string type data to upper case in the UI.
+  * Lowercase -> Converts the string type data to lower case in the UI.
+  * Titlecase -> Converts the string type data in which the first alphabet of each word is made capital and the rest will be in the small case.
+  * Slice -> <string index> it works on string fields or array. it slices the input from the index till the end of the string or array length.
+  * slice <string index> <end index> it works on string fields or array. it slices the input from the starting index to the end index. (excluding the end index)
+
+  * There are many date type pipes available in angular. following are some of the important ones.
+  * shortDat - it converts the date to a short date.
+  * longDate - it provides the long date for the date. provides full month name then day and year.
+  * fullDate - it provides the full date fro the date. i.e day, month date, year
+
+  * percentPipe is used to dasplay data in percent i.e 0.5 | i display as 5| percent.
+  * decimalPipe is used to display data in decimal with custom formatting
+  * currencyPipe displays with currency format.
+  * syntax
+    * number_expression | percent[:minIntergerDigits}.{minFractionDigits}-{maxFractionDigits}
+    * where minIntegerDigits, minFractionDigits and maxFractionDigits have default values 1,0 and 3 respectively.
+    * {{myNumber| currency: 'INR'}}
+    * {{myNumber| currency: 'INR':'code'}}
+
+
+* jsonPipe
+  * jsonPipe converts a value into json String
+    * syntax
+     * expression | json
+     * example
+      {{countries | json}}
+
+
+ how to create custom Pipe
+
+* To create a pipe in Angular 5, you have to apply the @Pipe decorator to class, which we can import from the core Angular library.
+* The @Pipe decorator allows you to define the pipe name that you'll use within template expression.
+* syntax
+ * import {Pipe, PipeTransform} from '@angular/core';
+  @Pipe({name:'Pipename})
+  export class Pipeclass implements PipeTransform{
+    transform(paramters):returntype{} )
+
+  * Note -> Transform() method will decde the input types, the number of arguments, and its type and output type of our custom pipe
