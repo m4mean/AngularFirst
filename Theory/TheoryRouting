@@ -1,0 +1,140 @@
+Angular routing
+* Routing is mechanism used by angular for navigating between page and displaying appropriated component/page on browses.
+* Angular framework is mainly focused and good for the spa (single page architecture). it loads a single full html page and dynamically loads or updates the partial pages as per user request. and that is achieved with the help of router. a set of partial page loading rule and urls is defined in router or render or load partial pages based on user request.
+* Angular routing helps navigation across the application from one view to another view. it also allows us to maintain the state, implement modules, and load the modules based on the role of the user.
+* in component based architecture of angular 5, angular looks into the routes array, match the path as per the route requested and loads the component relevant to the requested route as well as makes available the relevant data for that particular route.
+* Angular provides an easy way to create and work with components, in a single page application (SPA) it is essential to work with multiple views/screens, navigate and communicate between them. angular provides router service to manage this in a vary easy way.
+* An angular application that user angular router only has one router service instance: it's a singleton. whenever and wherever you inject the router service in your application, you'll get access to the same angular router service instance.
+
+why routing
+* we access our application through one url such as http://localhost:4200 and our application is not aware of any other url such as http://localhost:4200/login.
+* Most web application need to support different urls to navigate users to different pages in the application. that's where a router comes in.
+
+Angular router
+* angular router is an official angular routing library, written and maintained by the angular core team
+* it's a javascript router implementation that's designed to work with angular and is packaged as @angular/router.
+* first of all angular router takes care of the duties of a javascript router:
+* it activates all required angular components to compose a page when a user navigates to a certain url
+* it lets users navigate from one page to another without page reload.
+* it updates the browser's history so the user can use the back and forward buttons when navigating back and forth between pages.
+
+* angular router allows us to:
+* redirect a url to another url
+* resolve data before a page is displayed
+* run scripts when a page is activated or deactivated
+* lazy load parts of our application.
+
+how angular router works
+* when a user navigates to a page, angular router performs the following steps in order:
+* every time a link is clicked or the browser url changes, angular router makes sure your application reacts accordingly.
+* to accomplish that, angular router performs the following 7 steps in order:
+ * step 1 parse the url
+  In step 1 of the routing process, angular router takes the browser url and parses it as a url tree.
+ * a url tree is a data structure that will later help angular router identify the router state tree in step 3
+ * to parse the url angular user the following conventions
+    * / - slashes divide url segments
+    * () - parentheses specify secondary routers
+    * : - a colon specifies a named router outlet
+    * ; - semicolon specifies a matrix parameter
+    * ? - a question mark separates the query string parameters
+    * # - hashtag specifies the fragment
+    * // - a double slash separates multiple secondary routers
+
+ 2 step 2 - redirect
+    * before angular router use the url three to create a router state, it checkes to see if any redirects should be applied. There are 2 kinds of redirect
+    * local redirect: when redirectTo does not start with a slash.replace a single url segment
+      examples: {path:'one',redirectTo:'two'}
+    * absolute redirect: when redirectTo starts with a slash.replaces the entire Url
+      example: {path:'one', redirectTo: '/two'}
+    * ony one redirect is applied
+
+ 3 step 3 - identify the router state
+    * anglar router traverses the url tree and matches the url segments against the paths configured in the router configuration.
+    * if a url segment matches the path of a route, the route's child routes are matched against the remaining url segements until all url segments are matched.
+    * if no complete match is found, the router backtracks to find a match in the next sibling route
+
+ 4 step 4 - guard - run guards
+    * at the moment, any user can navigate anywhere in the application anytime. that's not always the right thing to do.
+    * Perhaps the user is not authorized to navigate to the target component.
+    * maybe the user must login (authenticate ) first.
+    * maybe you should fetch some data before you display the target component.
+    * you might want to save pending changes before leaving a component.
+    * you might ask the user if it's ok to discard pending changes rather than save them.
+    * you can add guards to the route configuration to handle these scenarios.
+
+ 5 step 5 - resolve - run resolvers
+    * it resolves the required data for the router state
+
+ 6 step 6 - activate
+    * it activates the angular components to display the page
+
+ 7 setp 7 - manage
+    * finally, when the new router state has been displayed to the screen, angular router listens for url changes and state changes
+    * it manages navigatio and repeats the process when a new url is requested
+
+
+Router outlet
+  * Router outlet is a dynamic component that the router uses  to displays views based on router navigations
+  * router outlet is a routing component an angular component with a routerOutlet that displays views based on router navigation.
+  * The role of <router-outlet> is to mark where the router displays a view. (This is the location where angular will insert the component we want to route to on the view)
+  * the <router-outlet> tells the router where to display routed views.
+  * the routerOutlet is one of the router directives that became available to the appcomponent because appmodule imports app routing module which exported routermodule.
+
+  i.e
+    <nav [ngClass]="'meny'">
+    <a routerLink="/home" routerLinkActive ="active-link"> Home </a>
+    <a routerLink="/add-book" routerLinkActive ="active-link">Add Home </a>
+    <a routerLink="/manage-book" routerLinkActive ="active-link">Manage Home </a>
+    </nav>
+    <router-outlet><router-outlet>
+
+Router Link - Navigate
+  * with the help of the routerLInk directive, we can link to routes of our application right from the html template. just add the directive to an html-element when the user clicks on the element, angular navigates to the specified location.
+  * The routeLink is the selector for the routerLink directive that turns user clicks into router navigation you can assign a string to the routerLink
+  * This directive generates our link based on the route path.
+
+Router Link - client side
+  * syntax:
+    * template:
+    * <h1> Angular router</h1>
+    * <div>
+    * <a [routerLink]="['/student']">Student </a>
+    * </div>
+    * </div>
+    * <router-outlet></router-outlet>
+
+Router link - server-side
+  * for your application to work with server-side rendering, the element hosting the directive has the be a link (a) element.
+  * it is also possible, to navigate to a route from code. to do so, we need to the angular router.
+  * import{Router} from '@angular/router';
+  * construcor(private router:Router){}
+  * Once we have that router, navigation is quite simple. just call the navigate function of router. this function takes an array. the first entry of the array defines the string of the route, we want to navigate to. the second is optional and allows us to pass in a route parameter.
+  * this.router.navigate(['/student',4545454]);
+
+  * use the cli to generate it.
+  * ng generate module app-routing --flat --module=app
+    --flat puts the file in src/app instead of its own folder.
+    -- module=app tells the cli to register it the imports array of the AppModule.
+
+Redirecting routes
+  * A redirect route that translates the initial relative URL('') to the desired default path(/component-one)
+  * when application starts, it navigates to the empty route by default. we can configure the router to redirect to a named route by default:
+  * A router has not routes until you configure it.
+  * exports const routes:Routes =[
+      {path:'', redirectTo:'component-one', pathMatch:'full'},
+      {path:'component-two', component:componentOne},
+      ];
+
+
+Redirecting routes
+  * This route redirects a url that fully matches the empty path to the route whose path is '/component-one'.
+  * The empty path in the first route represents the default path for the application, the place to go when the path in the url is empty as it typically is at the start this default route redirects to the route for the / component-one url and, therefore, will display the componentOne.
+  * A redirect route requires a pathMatch property to tell the router how to match a url to the path of a route. the router throws an error if you don't
+  * for the special case of an empty url we also need to add the pathMatch:'full' property so angular knows it should be matching exactly the empty string and not partially the empty string.
+
+Wildcard route
+  * Wildcard route to intercept invalid urls and handle them gracefully
+  * a wildcard route has a path consisting of two asterisks(**).
+  * it matches every url, the router will select his route if it can't match a route earlier in the configuration. a wildcard route can navigate to a custom "404 not found" component or redirect to an existing route.
+  * {path:"**", component: PageNotFoundComponent}
+  * if the entire router configuration is processed and there is no match, router navigation fails and an error is logged
