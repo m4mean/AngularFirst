@@ -13,6 +13,7 @@
   <tr *ngFor="let e of employees">
     <td>{{e.code}}</td>
     <td>{{e.name | uppercase}}</td>
+    <td>{{e.gender | mypipe:e.gender}}</td>
     <!--// parameterized pipes-->
     <td>{{e.salary | currency:'USD':true}}</td>
     <td>{{e.dateOfBirth | date:"dd-mm-yyyy"}}</td>

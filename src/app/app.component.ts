@@ -12,30 +12,35 @@ export class AppComponent {
     {
       code: 'code1',
       name: 'rohan dhiman',
+      gender : 'male',
       salary: 40000,
       dateOfBirth: '12/01/1999'
     },
     {
       code: 'code2',
       name: 'nisha dhiman',
+      gender : 'female',
       salary: 44000,
       dateOfBirth: '12/01/2011'
     },
     {
       code: 'code3',
       name: 'akshita dhiman',
+      gender : 'female',
       salary: 45000,
       dateOfBirth: '12/01/2012'
     },
     {
       code: 'code4',
       name: 'gifty dhiman',
+      gender : 'female',
       salary: 46000,
       dateOfBirth: '12/01/2013'
     },
     {
       code: 'code5',
       name: 'sonali dhiman',
+      gender : 'female',
       salary: 40000,
       dateOfBirth: '12/1/2014'
     }
