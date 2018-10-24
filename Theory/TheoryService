@@ -1,0 +1,49 @@
+Service
+  * Services are a piece of code that are used to perform a specific task, a service can contain a value or function or combinations of both. services are injected into application using dependency injection mechanism. services prevent us from writing the same code at multiple sections of our application. the best solution is to write services are inject in application where we need it services provide, store and interact with data, and a communication channel b/w classes. service is a mechanism used to share the functionality b/w the components.
+
+  * An angular service is simply a function that allows us to access it's defined properties and methods.
+  * it also helps keep your coding organized.
+  * you will most likely run into a scenario in which you need to use the same code across multiple components.
+  * you will create a single reusable data service and inject it inot the component that need it.
+  * it easy to unit test component with a mock service.
+
+* step 1 : create the service file
+  * creating a service with the angular-cli
+  * this is fairly easy, as it generates the scaffolding for you. in the command prompt, simply  type:
+  * ng generate service myservicename
+* step 2 : import the injectable member
+  * At the top of your new services file, add:
+  * import {injectable} from '@angular/core';
+* step 3 : add the injectable decorator
+  * in step 2 above, we imported the injectable member from the angular core library. now we need to add the injectable() decorator:
+  * @injectable()
+  * note: as with all other angular decorators, we preceed the name with an @symbol, and we don't add a semi-colo; at the end.
+* step 4: export the services class
+  * and finally, we create the class that contains the logic of our service:
+  * export class ExamplesService{
+    // this is where your methods and properties go, for example:
+    someMethod(){
+      return 'hey';
+    }
+  }
+* step 5 : import the service to your component
+  * Choose a component file and at the top, you must include the service member (line 2 below):
+  * import {Component} from '@angular/core';
+  * import {ExampleService} from './example.service';
+* step 6 : add it as a provider
+  * now you must add it to the providers array in the component decorator metadata (line 4 below)
+  * @Component({
+    selector: 'my-app',
+    template: '<h1>{{title}}</h1>',
+    providers:[ExampleService]
+  }
+
+step : include it through dependency injection
+  * in the constructor arguments of the component class, we include it through dependency injection:
+  * constructor(private _exampleService:ExampleService){}
+step : using the service
+  * now we can access the service's method and properties by referencing the private _examplesService for example:
+  * ogOnlnit(){this.title = this._exampleService.someMethod();}
+
+
+

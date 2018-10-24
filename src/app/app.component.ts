@@ -1,12 +1,19 @@
 import { Component } from '@angular/core';
+import {MyserviceService} from './myservice.service';
 
 @Component({
   selector: 'app-root',
-  // templateUrl: './app.component.html',
-  // template mai hum direct text echo karva skte hai but templateurl mai file print karava skte hai
-  template : '<h1>Hello man</h1>',
-  styleUrls: ['./app.component.css']
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+  providers: [MyserviceService]
 })
 export class AppComponent {
-  title = 'my-app';
+  title: string;
+constructor(private _service: MyserviceService) {
+}
+
+ngOnInit() {
+  this.title = this._service.display();
+}
+
 }
