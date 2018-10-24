@@ -1,0 +1,40 @@
+Dependency injection
+  * In Software engineering, dependency injection is a technique whereby one object supplies the dependencies of another object. a dependency is an object that can be used (a service)
+  * it is a coding pattern in which classes receive their dependencies from external sources rather than creating them himself.
+  * An injection is the passing of a dependency to a dependent object (a client) that would use it.
+  * dependency injection is the heart of angular applications.
+
+  * when module a in an application needs module b to run, then module b is a dependency of module A
+
+  * dependency injection is a combination of two terms, those are "dependency" and "injections".
+  * dependency - Dependency is an object or service that can be used in any another object
+  * injections -> add injection is a process of passing the dependency to a dependent object. it creates a new instance of class along with its required dependencies.
+  * The Di system in angular 5 basically consists of three important aspects:
+    * injector: the Injector object is used to create an instance of a dependency. the injector is a mechanism that provides a method using which a dependency is instantiated. to create a dependency, an injector looks for a provider
+    * provider: a provider is mechanism using which we register our dependency to be injected. providers are usually singleton (one instance) objects, that other objects have access to through dependency injection (di)
+    * in angular we can register our dependency at two levels.
+      * At app level:
+      * Registering dependency at app level creates the injected dependency singleton
+      @NgModule({
+        declarations:[ppComponent, CustomDirective],
+        imports:[BrowserModule, FormsModule],
+        //register dependency at app level
+          providers:[NumlistService, LoggerService],
+          bootstrap:[AppComponent]
+          })
+        export class appModule {}
+      }
+    * At component level
+    * you can also register the dependency at component level. there a new instance of the dependency will create.
+    * @Component({
+        selector:'app-comp',
+        templateUrl:'./comp.component.hhtml',
+        // inject dependency at component level
+          providers:[NumListService],
+          styleUrls:['./com.component.css'
+      });
+
+      * dependency:
+        * the dependency that we are injecting in a constructor is an object of the class that we want to use.
+
+

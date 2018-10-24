@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
+import {MyserviceService} from './myservice.service';
 
 @Component({
   selector: 'app-root',
-  // templateUrl: './app.component.html',
-  // template mai hum direct text echo karva skte hai but templateurl mai file print karava skte hai
-  template : '<h1>Hello man</h1>',
+  templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  deptoobj: any[];
   title = 'my-app';
+  constructor(private _service: MyserviceService) {
+    this.deptoobj = this._service.dept;
+  }
 }
