@@ -1,0 +1,79 @@
+Angular Form
+  * Forms are the main building blocks of any application. when we use forms for login, registration, submission, help request, etc.. it is necessary that whatever form we are developing, they must be user-friendly. and it should have the indication of what went wrong etc.
+  * forms are really important to collect the data from the users. often each website contains forms to collect the data.
+  * forms are the mainstay of business applications. you need forms to log in, submit a help request, place an order, book a flight, schedule a meeting and perform countless other data-entry tasks.
+
+  * developing forms requires design skill as well as framework support for two-way data binding, change tracking validation, and error handling.
+  * angular provides 2 different ways to collect and validate the data from a user.
+    * Template-driven forms
+    * model-driven forms (Reactive forms)
+
+  * template driven forms
+  * template driven forms are simple forms which can be used to develp forms. these are called template=driven as everything that we are going to use in an application is defined into the template that we are defining along with the component.
+    * template driven forms
+    * prerequisite
+    * template driven forms features
+    * easy to use
+    * suitable for simple scenarios and fails for complex scenarios.
+    * similar to angular i.o
+    * two way data binding (using[NgModel] syntax)
+    * Minimal component code.
+    * Automatic track of the form and its data.
+    * unit testing is another challenge.
+
+  * model-driven forms (reactive forms)
+    * in a model-driven approach, the model which is created in the .ts file is responsible for handling all the user interactions/validations. for this, first, we need to create the model using angular's inbuilt classes like formGroup and formControl and then, we need to bind that model to the html form.
+    * this approach uses the reactive forms for developing the forms which favor the explicit management of the data between the ui and the model. with this approach, we create the tree of angular form controls directly in the component, it makes it a bit easier to push the data between the data models and the ui elements.
+
+  model-driven forms (reactive forms)
+    * prerequisite
+    * we need to import reactiveFormsModel in our app.module.ts file
+    * Reactive forms features
+    * more flexible, but needs a lot of practice
+    * Handles any comples scenarios
+    * no data binding is done (immutable data model preferred by most developers)
+    * more component code and less html markup
+    * reactive transformations can be made possible such as
+      * Handling a event based on a denounce time
+      * handling events when the components are distinct until changed
+      * adding elements dynamically
+    * easier unit testing
+which one is better - template driven or reactive?
+  * Neither reactive nor template Driven are better over each other. they both are different approaches, so you can use whichever suits your needs the most. you can even use both in the same application.
+
+* NgForm
+    * it is the directive which helps to create the control groups inside form directive. it is attached to the <form> element in html and supplements form tag with some additional features. some interesting things we can say about view are that whenever we use the directive in the application view, we need to assign some selector with it and the form is the said selector in our case the next thing that we need to consider is the ngModel attribute that we have assigned to each html control let's see what this attributes does.
+* NgModel
+    * when we add NgModel Directive to the control, all the input are registered in the NgForm.
+    * it creates the instance of the formControl class from domain model and assigns it to the form control element. this control keeps track of the user information and the state and validation status of the form control
+    * next important thing to consider is that when we use NgModel with the form tag or most importantly with the NgForm we make use of the name property of html control when we look at the above snippet every control is assigned a name propery and we have added the ngModel attribute to the control.
+
+* Two main functionalists offered by NgForm and NgModel are the permission to retrieving all the values of the control associated with the form and then retrieving the overall state of controls in the form.
+* to expose ngForm in the application, we have used the following code snippet.
+* <form #regForm='ngForm'(ngSubmit)="Register(regForm)">
+* in this, we are exporting the ngForm value in the local variable "regform". now, the question arises, whether or not we need to use this local variable. well the answer is no. we are exporting ngForm in the local variable just o use some of the properties of the form and these properties are
+    * regForm.Value it gives the object containing all the values of the field i the form.
+    * regForm.Valid: this gives us the value indicating if the form is valid or not if it is valid value is true else value is false.
+    * ngForm.touched it returns true or false when one of the field in the form is entered and touched.
+    * in the above case, we have noticed that the form tag has no action method or attribute specified there, so how so we post the data in the component?
+    * let's have a look at the (ngSubmit)='Register(refForm)". here we are using the event binding concept and we are binding which will call the register method in the component instead of the submit event of the form, we are using ngSubmit which will send the actual http request instead of just submitting the form.
+
+Template driven forms with validation
+  * validation is an important aspect of programming. we can't true the user that's why we always want to validate the data. so to prevent the user from entering wrong data and show some proper value, we check and ask the users to add the proper data.
+  * angular set of ocmmon validators like minlength, maxlength, required, email. we just need to add the validator directive to the control for assigning the controls the validators.
+
+  * the following are the classes which will be attached whenever the state is changed
+    * ng-touched: controls have been visited
+    * ng-untouched: controls have not been visited
+    * ng-dirty: controls value has been changed
+    * ng-pristine: controls value have not been changed
+    * ng-valid: control values are valid
+    * ng-invalid: control values are invalid
+  * so, in order to draw a border around the first name whenever a user visits the control and does not add any value, we need to use these classes.
+    * here is how
+      * input.ng-valid.ng-touched{
+      border-color:red;
+      }
+
+
+
